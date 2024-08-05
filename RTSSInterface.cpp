@@ -102,13 +102,6 @@ void CRTSSInterface::LoadProfile(LPCSTR lpProfile)
 		m_pFnLoadProfile(lpProfile);
 }
 /////////////////////////////////////////////////////////////////////////////
-void CRTSSInterface::UpdateProfiles() 
-{
-    if (m_pFnUpdateProfiles) {
-        m_pFnUpdateProfiles();
-    }
-}
-/////////////////////////////////////////////////////////////////////////////
 void CRTSSInterface::SaveProfile(LPCSTR lpProfile)
 {
 	if (m_pFnSaveProfile)
@@ -141,6 +134,12 @@ void CRTSSInterface::ResetProfile(LPCSTR lpProfile)
 {
 	if (m_pFnResetProfile)
 		m_pFnResetProfile(lpProfile);
+}
+/////////////////////////////////////////////////////////////////////////////
+void CRTSSInterface::UpdateProfiles()
+{
+	if (m_pFnUpdateProfiles)
+		m_pFnUpdateProfiles();
 }
 /////////////////////////////////////////////////////////////////////////////
 DWORD CRTSSInterface::SetFlags(DWORD dwAND, DWORD dwXOR)
