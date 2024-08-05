@@ -143,12 +143,6 @@ void CRTSSInterface::ResetProfile(LPCSTR lpProfile)
 		m_pFnResetProfile(lpProfile);
 }
 /////////////////////////////////////////////////////////////////////////////
-void CRTSSInterface::UpdateProfiles()
-{
-	if (m_pFnUpdateProfiles)
-		m_pFnUpdateProfiles();
-}
-/////////////////////////////////////////////////////////////////////////////
 DWORD CRTSSInterface::SetFlags(DWORD dwAND, DWORD dwXOR)
 {
 	if(m_pFnSetFlags)
