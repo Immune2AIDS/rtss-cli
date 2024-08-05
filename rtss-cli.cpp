@@ -120,7 +120,7 @@ int main(int argc, char **argv)
         DWORD flags = GetFlags();
         cout << to_string(flags & RTSSHOOKSFLAG_OSD_VISIBLE ? 1 : 0) << endl;
     }
-    else if (command == "reload-profiles") 
+    else if (lc("reload-profiles") == action) // Fix the action comparison
     {
         interface.UpdateProfiles();
         std::cout << "Profiles reloaded." << std::endl;
