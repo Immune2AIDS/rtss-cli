@@ -6,6 +6,7 @@
 #include <algorithm>
 #include <cctype>
 #include "rtss-core.cpp"
+#include "RTSSInterface.h"
 
 using namespace std;
 
@@ -72,6 +73,7 @@ int main(int argc, char **argv)
         return 0;
     }
 
+    RTSSInterface interface;
     string action = lc(args[1]);
     if (lc("property:set") == action)
     {
