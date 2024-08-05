@@ -59,12 +59,15 @@ void SetProfileProperty(LPCSTR lpProfile, LPCSTR lpProfileProperty, DWORD dwProp
 }
 
 void SetProperty(string profileStr, string propertyStr, int propValue)
-{
+{   
+    rtss.LoadProfile(lpProfile);
     Init();
     LPCSTR profile = profileStr.c_str();
     LPCSTR property = propertyStr.c_str();
     DWORD value = (DWORD)propValue;
     SetProfileProperty(profile, property, value);
+    rtss.SaveProfile(lpProfile);
+    rtss.UpdateProfiles();
 }
 
 int GetProperty(string profileStr, string propertyStr)
