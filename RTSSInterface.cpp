@@ -102,6 +102,13 @@ void CRTSSInterface::LoadProfile(LPCSTR lpProfile)
 		m_pFnLoadProfile(lpProfile);
 }
 /////////////////////////////////////////////////////////////////////////////
+void CRTSSInterface::ReloadProfiles() 
+{
+    if (m_pFnUpdateProfiles) {
+        m_pFnUpdateProfiles();
+    }
+}
+/////////////////////////////////////////////////////////////////////////////
 void CRTSSInterface::SaveProfile(LPCSTR lpProfile)
 {
 	if (m_pFnSaveProfile)
