@@ -58,6 +58,8 @@ public:
 		//ZoomRatio								1..8	- On-Screen Display zoom
 		//CoordinateSpace						0..1	- On-Screen Display coordinate space
 
+	void	ReloadProfiles();
+
 	BOOL	SetProfileProperty(LPCSTR lpPropertyName, LPBYTE lpPropertyData, DWORD dwPropertySize);
 		//set profile property
 	void	DeleteProfile(LPCSTR lpProfile);
