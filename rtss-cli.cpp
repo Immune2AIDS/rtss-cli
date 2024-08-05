@@ -6,7 +6,6 @@
 #include <algorithm>
 #include <cctype>
 #include "rtss-core.cpp"
-#include "RTSSInterface.h"
 
 using namespace std;
 
@@ -73,7 +72,6 @@ int main(int argc, char **argv)
         return 0;
     }
 
-    RTSSInterface interface;
     string action = lc(args[1]);
     if (lc("property:set") == action)
     {
@@ -121,11 +119,6 @@ int main(int argc, char **argv)
         SetFlags(0xFFFFFFFF, RTSSHOOKSFLAG_OSD_VISIBLE);
         DWORD flags = GetFlags();
         cout << to_string(flags & RTSSHOOKSFLAG_OSD_VISIBLE ? 1 : 0) << endl;
-    }
-    else if (lc("reload-profiles") == action) // Fix the action comparison
-    {
-        interface.UpdateProfiles();
-        std::cout << "Profiles reloaded." << std::endl;
     }
     else if (lc("limiter:set") == action)
     {
