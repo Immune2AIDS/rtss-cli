@@ -122,7 +122,7 @@ int main(int argc, char **argv)
     }
     else if (command == "reload-profiles") 
     {
-        interface.ReloadProfiles();
+        interface.UpdateProfiles();
         std::cout << "Profiles reloaded." << std::endl;
     }
     else if (lc("limiter:set") == action)
