@@ -85,7 +85,7 @@ int main(int argc, char **argv)
         if (toLowerCase(profile) == "global")
             profile = "";
 
-        SetProfileProperty(profile, property, stoi(value));
+        SetProperty(profile, property, stoi(value));
         cout << "OK" << endl;
     }
     else if (lc("property:get") == action)
